@@ -77,12 +77,12 @@ const handleLogin = (event) => {
     event.preventDefault()
 
     user.id = crypto.randomUUID()
-    user.name = loginInput.value
+    user.name = loginInput.value                
     user.color = getRandomColor()
+
 
     login.style.display = "none"
     chat.style.display = "flex"
-
     websocket = new WebSocket("wss://chat-online-3wae.onrender.com")
     websocket.onmessage = processMessage
 }
